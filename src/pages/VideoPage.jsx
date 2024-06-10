@@ -22,7 +22,7 @@ export default function VideoAespaPage() {
         <source src={aespaLoading} type="video/mp4" />
       </video>
       <div className="absolute bottom-0 w-full text-center p-4 bg-black bg-opacity-50">
-        <h1 className="text-white text-3xl pb-8">Click anywhere to continue</h1>
+        <h1 className="text-white text-3xl pb-8">Click Anywhere To Start</h1>
       </div>
     </div>
   );
