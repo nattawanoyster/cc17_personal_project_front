@@ -23,7 +23,7 @@ export default function Modal({ width = 30, title, children, open, onClose }) {
                 style={{ width: `${width}rem` }}
                 onClick={(e) => e.stopPropagation()}
               >
-                <div className="flex justify-between items-center p-5 border-b">
+                <div className="flex justify-between items-center p-5">
                   <button className="invisible"> &#10005; </button>
                   <h5 className="text-2xl font-semibold text-white">
                     {" "}

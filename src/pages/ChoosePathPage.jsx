@@ -2,7 +2,7 @@ import React from "react";
 import rvvLogo from "../assets/rvv-logo.jpg";
 import aespaLogo from "../assets/aespa-logo.jpg";
 
-const ImageLinks = () => {
+const chooseYourPath = () => {
   const handleImageClick = (url) => {
     window.location.href = url; // Navigate to the external URL
   };
@@ -18,9 +18,7 @@ const ImageLinks = () => {
           src={rvvLogo}
           alt="Image 1"
           className="cursor-pointer h-1/2 w-full object-cover"
-          onClick={() =>
-            handleImageClick("https://www.youtube.com/watch?v=VIDEO_ID1")
-          }
+          onClick={() => handleImageClick("/chillkill")}
         />
         <img
           src={aespaLogo}
@@ -35,4 +33,4 @@ const ImageLinks = () => {
   );
 };
 
-export default ImageLinks;
+export default chooseYourPath;
