@@ -1,10 +1,11 @@
 import React from "react";
 import rvvLogo from "../assets/rvv-logo.jpg";
 import aespaLogo from "../assets/aespa-logo.jpg";
+import lucidDreamSound from "../assets/aespa - Lucid Dream.mp3";
 
 const chooseYourPath = () => {
   const handleImageClick = (url) => {
-    window.location.href = url; // Navigate to the external URL
+    window.location.href = url;
   };
 
   return (
@@ -24,11 +25,15 @@ const chooseYourPath = () => {
           src={aespaLogo}
           alt="Image 2"
           className="cursor-pointer h-1/2 w-full object-cover"
-          onClick={() =>
-            handleImageClick("https://www.youtube.com/watch?v=VIDEO_ID2")
-          }
+          onClick={() => handleImageClick("/armageddon")}
         />
       </div>
+
+      {/* <div>
+        <audio autoPlay loop controls>
+          <source src={lucidDreamSound} type="audio/mpeg" />
+        </audio>
+      </div> */}
     </div>
   );
 };

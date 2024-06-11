@@ -33,7 +33,7 @@ export default function RegisterContainer() {
           {" "}
           Now Playing
           <br />
-          Chill Kill - Red Velvet Instrumental Ver.
+          WENDY - His Car Isn't Yours
         </div>
       </div>
     </div>
