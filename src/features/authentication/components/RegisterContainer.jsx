@@ -15,7 +15,7 @@ export default function RegisterContainer() {
       </div>
       <div className="flex items-center justify-center">
         <button
-          className="bg-lime-900 hover:bg-lime-800 bg-opacity-80 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-72"
+          className="bg-lime-900 hover:bg-lime-800 bg-opacity-70 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-72"
           type="button"
           onClick={() => setOpen(true)}
         >
@@ -25,7 +25,7 @@ export default function RegisterContainer() {
       </div>
 
       <Modal title="Sign Up" open={open} onClose={() => setOpen(false)}>
-        <RegisterForm />
+        <RegisterForm onSuccess={() => setOpen(false)} />
       </Modal>
 
       <div className="flex items-center justify-center text-center">
