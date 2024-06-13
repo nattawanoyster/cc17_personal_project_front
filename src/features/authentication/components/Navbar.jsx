@@ -1,8 +1,5 @@
-// src/components/NavBar.js
-
 import React from "react";
 import { Link } from "react-router-dom";
-import { Navigate } from "react-router-dom";
 
 export default function NavBar() {
   return (
@@ -11,13 +8,13 @@ export default function NavBar() {
         <div className="relative flex items-center justify-between h-16">
           <div className="flex-1 flex items-center justify-center sm:items-stretch">
             <div className="flex-shrink-0">
-              <h1 className="text-white text-xl font-bold">My Website</h1>
+              <h1 className="text-white text-xl font-bold">👽👽👽👽</h1>
             </div>
 
             <div className="hidden sm:block sm:ml-6">
               <div className="flex space-x-4">
                 <Link
-                  to="/"
+                  to="/home-redvelvet"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Music Player

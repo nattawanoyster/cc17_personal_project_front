@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import aespaLoading from "../assets/vdo/loading-aespa.mp4";
+// import supernovaSound from "../assets/Supernova-aespa.mp3";
 
 export default function VideoAespaPage() {
   const navigate = useNavigate();
@@ -24,6 +25,10 @@ export default function VideoAespaPage() {
       <div className="absolute bottom-0 w-full text-center p-4 bg-black bg-opacity-50">
         <h1 className="text-white text-3xl pb-8">Click Anywhere To Start</h1>
       </div>
+
+      {/* <audio autoPlay loop>
+        <source src={supernovaSound} type="audio/mpeg" />
+      </audio> */}
     </div>
   );
 }

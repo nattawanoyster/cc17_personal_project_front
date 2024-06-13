@@ -11,6 +11,10 @@ const RvvHome = lazy(() => import("../pages/redvelvet-home"));
 const RvvBio = lazy(() => import("../pages/rvvBiography"));
 const RvvConcert = lazy(() => import("../pages/rvvConcert"));
 const RvvProduct = lazy(() => import("../pages/rvvProduct"));
+const AespaHome = lazy(() => import("../pages/aespa-home"));
+const AespaBio = lazy(() => import("../pages/aespaBiography"));
+const AespaConcert = lazy(() => import("../pages/aespaConcert"));
+const AespaProduct = lazy(() => import("../pages/aespaProduct"));
 
 const router = createBrowserRouter([
   { path: "/", element: <VideoPage /> },
@@ -22,6 +26,10 @@ const router = createBrowserRouter([
   { path: "/biography-redvelvet", element: <RvvBio /> },
   { path: "/concert-redvelvet", element: <RvvConcert /> },
   { path: "/product-redvelvet", element: <RvvProduct /> },
+  { path: "/home-aespa", element: <AespaHome /> },
+  { path: "/biography-aespa", element: <AespaBio /> },
+  { path: "/concert-aespa", element: <AespaConcert /> },
+  { path: "/product-aespa", element: <AespaProduct /> },
 ]);
 
 export default function Router() {
