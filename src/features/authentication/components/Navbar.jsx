@@ -1,6 +1,8 @@
 // src/components/NavBar.js
 
 import React from "react";
+import { Link } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 export default function NavBar() {
   return (
@@ -14,30 +16,32 @@ export default function NavBar() {
 
             <div className="hidden sm:block sm:ml-6">
               <div className="flex space-x-4">
-                <a
-                  href="#music-player"
+                <Link
+                  to="/"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Music Player
-                </a>
-                <a
-                  href="#product"
+                </Link>
+                <Link
+                  to="/"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Product
-                </a>
-                <a
-                  href="#biography"
+                </Link>
+
+                <Link
+                  to="/biography-redvelvet"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Biography
-                </a>
-                <a
-                  href="#concert"
+                </Link>
+
+                <Link
+                  to="/concert-redvelvet"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Concert
-                </a>
+                </Link>
               </div>
             </div>
           </div>

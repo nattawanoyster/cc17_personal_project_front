@@ -2,6 +2,10 @@ import { useState } from "react";
 import RegisterContainer from "./RegisterContainer";
 import Input from "../../../components/input";
 import validateLogin from "../validators/validator-login";
+import useAuth from "../../../hooks/useAuth";
+import { AxiosError } from "axios";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const initialInput = {
   username: "",
@@ -17,18 +21,37 @@ export default function LoginForm() {
   const [input, setInput] = useState(initialInput);
   const [inputError, setInputError] = useState(initialInputError);
 
+  const { login } = useAuth();
+
+  const navigate = useNavigate();
+
   const handleChangeInput = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
   };
 
-  const handleSubmitForm = (e) => {
-    e.preventDefault();
-    const error = validateLogin(input);
-    if (error) {
-      return setInputError(error);
-    }
+  const handleSubmitForm = async (e) => {
+    try {
+      e.preventDefault();
+      const error = validateLogin(input);
+      if (error) {
+        return setInputError(error);
+      }
 
-    setInputError({ initialInputError });
+      setInputError({ initialInputError });
+
+      await login(input);
+      navigate("/chooseyourpath");
+      toast.success("Login Successfully. May you a delighted day");
+    } catch (error) {
+      console.log(error);
+      if (error instanceof AxiosError) {
+        const message =
+          error.response.status === 400
+            ? "Username or Password is Invalid"
+            : "Internal Server Error";
+        return toast.error(message);
+      }
+    }
   };
 
   return (

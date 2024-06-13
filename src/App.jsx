@@ -10,12 +10,12 @@ import AuthContextProvider from "./context/AuthContext";
 
 function App() {
   return (
-    <AuthContextProvider>
-      <Suspense fallback={<h1> loadind </h1>}>
+    <Suspense fallback={<h1> loadind </h1>}>
+      <AuthContextProvider>
         <Routerr />
         <ToastContainer position="bottom-right" autoClose={8000} />
-      </Suspense>
-    </AuthContextProvider>
+      </AuthContextProvider>
+    </Suspense>
   );
 }
 
