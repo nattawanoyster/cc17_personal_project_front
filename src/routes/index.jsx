@@ -10,6 +10,7 @@ const AespaMusicVideo = lazy(() => import("../pages/aespaMusicVideo"));
 const RvvHome = lazy(() => import("../pages/redvelvet-home"));
 const RvvBio = lazy(() => import("../pages/rvvBiography"));
 const RvvConcert = lazy(() => import("../pages/rvvConcert"));
+const RvvProduct = lazy(() => import("../pages/rvvProduct"));
 
 const router = createBrowserRouter([
   { path: "/", element: <VideoPage /> },
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
   { path: "/home-redvelvet", element: <RvvHome /> },
   { path: "/biography-redvelvet", element: <RvvBio /> },
   { path: "/concert-redvelvet", element: <RvvConcert /> },
+  { path: "/product-redvelvet", element: <RvvProduct /> },
 ]);
 
 export default function Router() {
