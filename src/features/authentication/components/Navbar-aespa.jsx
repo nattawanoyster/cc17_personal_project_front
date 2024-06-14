@@ -8,7 +8,12 @@ export default function NavBarAespa() {
         <div className="relative flex items-center justify-between h-16">
           <div className="flex-1 flex items-center justify-center sm:items-stretch">
             <div className="flex-shrink-0">
-              <h1 className="text-white text-xl font-bold">My Website</h1>
+              <Link
+                to="/chooseyourpath"
+                className="text-white text-xl font-bold"
+              >
+                My Website
+              </Link>
             </div>
 
             <div className="hidden sm:block sm:ml-6">
