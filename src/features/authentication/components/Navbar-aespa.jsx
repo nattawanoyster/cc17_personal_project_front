@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Dropdown from "../../../layout/Dropdown";
 
 export default function NavBarAespa() {
   return (
@@ -44,6 +45,14 @@ export default function NavBarAespa() {
                 >
                   Concert
                 </Link>
+              </div>
+            </div>
+            <div className="hidden sm:block sm:ml-6">
+              <div className="flex space-x-4 mt-1.5 text-center">
+                <div className="flex justify-end items-end">
+                  {" "}
+                  <Dropdown />{" "}
+                </div>
               </div>
             </div>
           </div>

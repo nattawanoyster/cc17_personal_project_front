@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 export default function Dropdown({ size = 2 }) {
   const [open, setOpen] = useState(false);
 
-  const { logout } = useAuth();
+  const { logout, authUser } = useAuth();
   const navigate = useNavigate();
 
   const handleClickLogout = () => {
@@ -20,7 +20,7 @@ export default function Dropdown({ size = 2 }) {
   return (
     <div>
       <div role="button" onClick={() => setOpen((prev) => !prev)}>
-        <Avatar />
+        <Avatar src={authUser?.profileImage} />
       </div>
 
       {open && (
@@ -28,9 +28,12 @@ export default function Dropdown({ size = 2 }) {
           <div className="p-4 w-72 bg-gray-300 rounded-lg shadow-[0_0_6px_rgb(0,0,0,0.2)]">
             <Link to="/profile" onClick={() => setOpen(false)}>
               <div className="flex items-center gap-2 hover:bg-gray-400 rounded-lg p-2">
-                <Avatar size={3.5} />
+                <Avatar size={3.5} src={authUser?.profileImage} />
                 <div className="flex flex-col">
-                  <h1 className="text-start font-semibold">imwinter</h1>
+                  <h1 className="text-start font-semibold">
+                    {" "}
+                    {authUser?.username}
+                  </h1>
                   <small className="text-gray-700">See your profile</small>
                 </div>
               </div>

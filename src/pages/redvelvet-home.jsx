@@ -6,16 +6,16 @@ import { useState, useEffect } from "react";
 import rvvCosmicPic from "../assets/rvv5.png";
 
 export default function RedvelvetHome() {
-  const [artist, setArtist] = useState([]);
+  // const [artist, setArtist] = useState([]);
 
-  console.log(artist, "-----------------");
-  useEffect(() => {
-    const getSong = async () => {
-      const res = await authApi.getSong();
-      setArtist(res.data);
-    };
-    getSong();
-  }, []);
+  // console.log(artist, "-----------------");
+  // useEffect(() => {
+  //   const getSong = async () => {
+  //     const res = await authApi.getSong();
+  //     setArtist(res.data);
+  //   };
+  //   getSong();
+  // }, []);
   // const res = getSong()
 
   return (
