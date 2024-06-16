@@ -26,7 +26,10 @@ export default function Dropdown({ size = 2 }) {
       {open && (
         <div className="absolute left-2/4 -translate-x-2 translate-y-3">
           <div className="p-4 w-72 bg-gray-300 rounded-lg shadow-[0_0_6px_rgb(0,0,0,0.2)]">
-            <Link to="/profile" onClick={() => setOpen(false)}>
+            <Link
+              to={`/profile/${authUser?.userId}`}
+              onClick={() => setOpen(false)}
+            >
               <div className="flex items-center gap-2 hover:bg-gray-400 rounded-lg p-2">
                 <Avatar size={3.5} src={authUser?.profileImage} />
                 <div className="flex flex-col">

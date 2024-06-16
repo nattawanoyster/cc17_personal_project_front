@@ -15,6 +15,7 @@ const AespaHome = lazy(() => import("../pages/aespa-home"));
 const AespaBio = lazy(() => import("../pages/aespaBiography"));
 const AespaConcert = lazy(() => import("../pages/aespaConcert"));
 const AespaProduct = lazy(() => import("../pages/aespaProduct"));
+const UserProfile = lazy(() => import("../pages/ProfilePage"));
 
 const router = createBrowserRouter([
   { path: "/", element: <VideoPage /> },
@@ -30,6 +31,7 @@ const router = createBrowserRouter([
   { path: "/biography-aespa", element: <AespaBio /> },
   { path: "/concert-aespa", element: <AespaConcert /> },
   { path: "/product-aespa", element: <AespaProduct /> },
+  { path: "/profile/:userId", element: <UserProfile /> },
 ]);
 
 export default function Router() {

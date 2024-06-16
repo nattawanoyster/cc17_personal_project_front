@@ -1,11 +1,17 @@
-import NavBar from "../features/authentication/components/Navbar";
-import authApi from "../api/auth-api";
+import NavBarAespa from "../features/authentication/components/Navbar-aespa";
+import aespa4pic from "../assets/aespa4.jpeg";
 import { useState, useEffect } from "react";
-import rvvCosmicPic from "../assets/rvv5.png";
+import authApi from "../api/auth-api";
 
-function rvvHomePage() {
+const aespaSong = () => {
   const [songs, setSongs] = useState([]);
   const [error, setError] = useState(null);
+
+  const [favorite, setFavorite] = useState(false);
+
+  const handleFavorite = () => {
+    setFavorite(!favorite);
+  };
 
   // const { authUser } = useAuth();
 
@@ -35,8 +41,8 @@ function rvvHomePage() {
 
   return (
     <div>
-      <NavBar />
-      <img src={rvvCosmicPic} alt="Cover Image" className="w-full " />
+      <NavBarAespa />
+      <img src={aespa4pic} alt="Cover Image" className="w-full " />
 
       <div className="bg-red-950 min-h-screen flex items-center justify-center">
         <div className="max-w-5xl p-8 bg-white shadow-lg rounded-lg mt-6">
@@ -76,11 +82,21 @@ function rvvHomePage() {
                   </div>
                   {/* Favorite Button */}
                   <div className="p-4 mt-4 bg-white rounded-lg shadow-md text-center">
-                    <button
+                    {/* <button
                       className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md"
                       onClick={() => addToFavorites(song.songId)}
                     >
                       ❤️ Add to Favorites
+                    </button> */}
+                    <button
+                      onClick={handleFavorite}
+                      className={`py-2 px-4 rounded-md ${
+                        favorite
+                          ? "bg-red-500 text-white"
+                          : "bg-gray-200 text-black"
+                      }`}
+                    >
+                      {favorite ? "❤️ Favorited" : "♡ Add to Favorites"}
                     </button>
                   </div>
                 </div>
@@ -91,49 +107,6 @@ function rvvHomePage() {
       </div>
     </div>
   );
-}
+};
 
-export default rvvHomePage;
-
-// export default function RedvelvetHome() {
-// const [artist, setArtist] = useState([]);
-
-// console.log(artist, "-----------------");
-// useEffect(() => {
-//   const getSong = async () => {
-//     const res = await authApi.getSong();
-//     setArtist(res.data);
-//   };
-//   getSong();
-// }, []);
-// const res = getSong()
-
-//   return (
-//     <div>
-//       <NavBar />
-//       <div className="h-screen">
-//         <img
-//           src={rvvCosmicPic}
-//           alt="rvvCosmicPic"
-//           className="cursor-pointer h-1/2 w-full object-cover"
-//         />
-//       </div>
-//       <div className="flex justify-center items-center mt-6">
-//         <div>
-//           <iframe
-//             style={{ borderRadius: "12px" }}
-//             src="https://open.spotify.com/embed/album/4YBKpZhJQXxO7RNjA4V4lY?utm_source=generator"
-//             width="700"
-//             height="700"
-//             frameBorder="0"
-//             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-//             allowFullScreen
-//             loading="lazy"
-//           ></iframe>
-//         </div>
-//         {/* <h1>My Spotify Embed</h1>
-//         <Spotify.Spotify link="https://open.spotify.com/track/1zC3wpW5qU7n6KVrBlbAah?si=1ce3544522374f69" /> */}
-//       </div>
-//     </div>
-//   );
-// }
+export default aespaSong;
