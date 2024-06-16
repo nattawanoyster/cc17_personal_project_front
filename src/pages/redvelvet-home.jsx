@@ -2,91 +2,114 @@ import NavBar from "../features/authentication/components/Navbar";
 import authApi from "../api/auth-api";
 import { useState, useEffect } from "react";
 import rvvCosmicPic from "../assets/rvv5.png";
+import RvvSong from "../components/rvv-song";
 
 function rvvHomePage() {
-  const [songs, setSongs] = useState([]);
-  const [error, setError] = useState(null);
-
-  // const { authUser } = useAuth();
-
-  useEffect(() => {
-    // Fetch songs from backend API
-    authApi
-      .getSong()
-      .then((response) => {
-        setSongs(response.data.data); // Assuming your API response structure is { data: [] }
-      })
-      .catch((error) => {
-        console.error("Error fetching songs:", error);
-        setError("Failed to fetch songs. Please try again later.");
-      });
-
-    authApi
-      .getAuthUser()
-      .then((response) => {
-        console.log("Fetched user info:", response.data);
-        setUserId(response.data.userId); // Assuming userId is returned in response
-      })
-      .catch((error) => {
-        console.error("Error fetching user info:", error);
-        // Handle error fetching user info
-      });
-  }, []);
-
   return (
     <div>
       <NavBar />
       <img src={rvvCosmicPic} alt="Cover Image" className="w-full " />
 
-      <div className="bg-red-950 min-h-screen flex items-center justify-center">
+      <div className="bg-gradient-to-br from-red-800 via-neutral-600 to-stone-800 min-h-screen flex items-center justify-center">
         <div className="max-w-5xl p-8 bg-white shadow-lg rounded-lg mt-6">
-          <div className="container mx-auto mt-8">
-            <div className="flex justify-center items-center">
-              <h1 className="text-3xl font-bold mb-4">
-                {" "}
-                Let's Discover Your Favorite Songs
-              </h1>
-            </div>
-            {error && <p className="text-red-500">{error}</p>}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {songs.map((song) => (
-                <div key={song.songId} className="relative">
-                  <div className="p-4 bg-white rounded-lg shadow-md">
-                    {/* Display cover image if available */}
-                    {song.coverImageUrl && (
-                      <img
-                        src={song.coverImageUrl}
-                        alt={`Cover for ${song.title}`}
-                        className="rounded-md mb-4"
-                      />
-                    )}
-                    <h3 className="text-lg font-semibold mb-2">{song.title}</h3>
-                    <p className="text-gray-600 mb-2">
-                      {song.artist} - {song.album}
-                    </p>
-                  </div>
-                  {/* Spotify Embed */}
-                  <div className="p-4 mt-4 bg-white rounded-lg shadow-md">
-                    <iframe
-                      className="w-full h-48 md:h-32 lg:h-48"
-                      src={`https://open.spotify.com/embed/track/${song.spotifyId}`}
-                      frameBorder="0"
-                      allow="encrypted-media"
-                    ></iframe>
-                  </div>
-                  {/* Favorite Button */}
-                  <div className="p-4 mt-4 bg-white rounded-lg shadow-md text-center">
-                    <button
-                      className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md"
-                      onClick={() => addToFavorites(song.songId)}
-                    >
-                      ❤️ Add to Favorites
-                    </button>
-                  </div>
-                </div>
-              ))}
-            </div>
+          <div className=" mt-8 mb-14">
+            <h1 className="italic text-center">
+              "Might be fragile, might be naive, <br />
+              Might be a bit broken, a little weary. <br />
+              <br />
+              Love, hatred, courage and fear, adventures unprepared, <br />
+              little pretty things, lilies, sunshine and moonlight. <br />
+              <br />
+              No one can see what comes tomorrow <br />
+              in this world full of delights"
+              <br />
+              <br />
+              Red Velvet - Chill Kill
+            </h1>
+            <br />
+            <br />
+            <br />
           </div>
+
+          <div className="flex justify-center items-center">
+            <h1 className="text-3xl font-bold mb-4">
+              {" "}
+              Get To Know More About Red Velvet{" "}
+            </h1>
+          </div>
+          <div className="flex flex-col justify-center items-center">
+            <iframe
+              width="800"
+              height="450"
+              src={`https://www.youtube.com/embed/KEFNlx4ZIOU?si=cXTbRUZ12WfYZ8d8`}
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              className="rounded-lg shadow-lg"
+            ></iframe>
+            <h2 className="text-sm text-center mb-4 mt-4">
+              Red Velvet, has transcended into the realms of legendary. Known
+              for their impeccable vocal skills, the anticipation for Red
+              Velvet's Killing Voice challenge was astronomical — and it's safe
+              to say they surpassed expectations. Within mere hours of its
+              release, the episode is on the brink of hitting 10 million views,
+              a testament to the group's unwavering popularity.
+            </h2>
+          </div>
+          <br />
+          <br />
+          <br />
+          <div className="flex flex-col justify-center items-center">
+            <h1 className="text-xl font-medium mb-4"> Previous Music Video</h1>
+            <iframe
+              width="800"
+              height="450"
+              src={`https://www.youtube.com/embed/R9At2ICm4LQ?si=bxPvXk31k5Z_idhF`}
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              className="rounded-lg shadow-lg"
+            ></iframe>
+            <h1 className="text-lg font-medium mt-3">
+              {" "}
+              Red Velvet - Feel My Rhythm
+            </h1>
+            <h2 className="text-sm text-center mb-4">
+              "Feel My Rhythm" is a song recorded by South Korean girl group Red
+              Velvet for their extended play <br />
+              The ReVe Festival 2022 - Feel My Rhythm (2022). Musically, it is a
+              dance-pop song that samples the Bach arrangement "Air", <br />
+              featuring "delicate" and "elegant" string melodies, "intense" trap
+              beats, and "fantastic" vocal charm.
+            </h2>
+            <iframe
+              width="800"
+              height="450"
+              src={`https://www.youtube.com/embed/uR8Mrt1IpXg?si=-iG-s4Zt08ZCdlhd`}
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              className="rounded-lg shadow-lg"
+            ></iframe>
+            <h1 className="text-lg font-medium mt-2"> Red Velvet - Psycho</h1>
+            <h2 className="text-sm text-center mb-4">
+              "Psycho" is a song that was recorded by South Korean girl group
+              Red Velvet and was released as the lead single from their first
+              compilation album The ReVe Festival: Finale (2019), which is the
+              third and final installment in the group's album trilogy The ReVe
+              Festival. "Psycho" is an R&B track that incorporates elements of
+              pop, trap and future bass, and is about a couple who are in a
+              complicated romantic relationship. A gothic-themed music video
+              accompanied the single's digital release on December 23, 2019.
+            </h2>
+          </div>
+          <RvvSong />
         </div>
       </div>
     </div>

@@ -13,7 +13,7 @@ export default function NavBar() {
                 to="/chooseyourpath"
                 className="text-white text-xl font-bold"
               >
-                👽👽👽👽
+                SUPERNOVA👽
               </Link>
             </div>
 
@@ -23,7 +23,7 @@ export default function NavBar() {
                   to="/home-redvelvet"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
-                  Music Player
+                  Home
                 </Link>
                 <Link
                   to="/product-redvelvet"

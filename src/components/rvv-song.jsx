@@ -1,15 +1,11 @@
-import { useState, useEffect } from "react";
+import NavBar from "../features/authentication/components/Navbar";
 import authApi from "../api/auth-api";
+import { useState, useEffect } from "react";
+import rvvCosmicPic from "../assets/rvv5.png";
 
-const aespaSong = () => {
+function rvvSong() {
   const [songs, setSongs] = useState([]);
   const [error, setError] = useState(null);
-
-  const [favorite, setFavorite] = useState(false);
-
-  const handleFavorite = () => {
-    setFavorite(!favorite);
-  };
 
   useEffect(() => {
     // Fetch songs from backend API
@@ -66,27 +62,16 @@ const aespaSong = () => {
                 <iframe
                   className="w-full h-48 md:h-32 lg:h-48 mt-6"
                   src={`https://open.spotify.com/embed/track/${song.spotifyId}`}
-                  frameBorder="0"
                   allow="encrypted-media"
                 ></iframe>
               </div>
               {/* Favorite Button */}
               <div className="p-4 mt-4 bg-white rounded-lg shadow-md text-center">
-                {/* <button
-                      className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md"
-                      onClick={() => addToFavorites(song.songId)}
-                    >
-                      ❤️ Add to Favorites
-                    </button> */}
                 <button
-                  onClick={handleFavorite}
-                  className={`py-2 px-4 rounded-md ${
-                    favorite
-                      ? "bg-red-500 text-white"
-                      : "bg-gray-200 text-black"
-                  }`}
+                  className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md"
+                  onClick={() => addToFavorites(song.songId)}
                 >
-                  {favorite ? "❤️ Favorited" : "♡ Add to Favorites"}
+                  ❤️ Add to Favorites
                 </button>
               </div>
             </div>
@@ -95,6 +80,6 @@ const aespaSong = () => {
       </div>
     </div>
   );
-};
+}
 
-export default aespaSong;
+export default rvvSong;

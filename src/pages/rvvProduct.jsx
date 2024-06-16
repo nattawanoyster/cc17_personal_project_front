@@ -4,8 +4,23 @@ import RvvPhotobook from "../assets/rvvPhotobook.jpg";
 import RvvBags from "../assets/rvvBags.jpg";
 import RvvPoster from "../assets/rvvPoster.png";
 import RvvsMini from "../assets/rvvsMini.jpg";
+import AespaModal from "../components/aespa-Modal";
+import BagDetail from "../assets/BagDetails.jpeg";
+import PhotobookDetails from "../assets/PhotobookDetails.jpeg";
+import PackageDetails from "../assets/PackageDetails.jpeg";
+import { useState } from "react";
 
 const rvvProduct = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div>
       <NavBar />
@@ -37,9 +52,18 @@ const rvvProduct = () => {
               </p>
               <p class="text-gray-700 font-bold">₩ 48,000</p>
               <div className="mt-4 flex justify-between">
-                <button class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 mt-4 rounded focus:outline-none focus:shadow-outline">
+                <button
+                  onClick={openModal}
+                  class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 mt-4 rounded focus:outline-none focus:shadow-outline"
+                >
                   See More Details
                 </button>
+
+                <AespaModal
+                  isOpen={isModalOpen}
+                  onClose={closeModal}
+                  image={PackageDetails}
+                />
                 <h3 className="bg-red-500 text-center font-semibold mt-6 p-1 w-28 h-auto">
                   {" "}
                   Sold Out{" "}
@@ -70,9 +94,18 @@ const rvvProduct = () => {
               </p>
               <p class="text-gray-700 font-bold">₩ 48,000</p>
               <div className="mt-4 flex justify-between">
-                <button class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 mt-4 rounded focus:outline-none focus:shadow-outline">
+                <button
+                  onClick={openModal}
+                  class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 mt-4 rounded focus:outline-none focus:shadow-outline"
+                >
                   See More Details
                 </button>
+
+                <AespaModal
+                  isOpen={isModalOpen}
+                  onClose={closeModal}
+                  image={PhotobookDetails}
+                />
                 <h3 className="bg-red-500 text-center font-semibold mt-6 p-1 w-28 h-auto">
                   {" "}
                   Sold Out{" "}
@@ -102,9 +135,18 @@ const rvvProduct = () => {
               </p>
               <p class="text-gray-700 font-bold">₩ 50,000</p>
               <div className="mt-4 flex justify-between">
-                <button class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 mt-4 rounded focus:outline-none focus:shadow-outline">
+                <button
+                  onClick={openModal}
+                  class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 mt-4 rounded focus:outline-none focus:shadow-outline"
+                >
                   See More Details
                 </button>
+
+                <AespaModal
+                  isOpen={isModalOpen}
+                  onClose={closeModal}
+                  image={PackageDetails}
+                />
                 <h3 className="bg-red-500 text-center font-semibold mt-6 p-1 w-28 h-auto">
                   {" "}
                   Sold Out{" "}
@@ -134,9 +176,18 @@ const rvvProduct = () => {
               </p>
               <p class="text-gray-700 font-bold">₩ 38,000</p>
               <div className="mt-4 flex justify-between">
-                <button class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 mt-4 rounded focus:outline-none focus:shadow-outline">
+                <button
+                  onClick={openModal}
+                  class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 mt-4 rounded focus:outline-none focus:shadow-outline"
+                >
                   See More Details
                 </button>
+
+                <AespaModal
+                  isOpen={isModalOpen}
+                  onClose={closeModal}
+                  image={PackageDetails}
+                />
                 <h3 className="bg-red-500 text-center font-semibold mt-6 p-1 w-28 h-auto">
                   {" "}
                   Sold Out{" "}
@@ -167,9 +218,18 @@ const rvvProduct = () => {
               </p>
               <p class="text-gray-700 font-bold">₩ 42,000</p>
               <div className="mt-4 flex justify-between">
-                <button class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 mt-4 rounded focus:outline-none focus:shadow-outline">
+                <button
+                  onClick={openModal}
+                  class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 mt-4 rounded focus:outline-none focus:shadow-outline"
+                >
                   See More Details
                 </button>
+
+                <AespaModal
+                  isOpen={isModalOpen}
+                  onClose={closeModal}
+                  image={PackageDetails}
+                />
                 <h3 className="bg-red-500 text-center font-semibold mt-6 p-1 w-28 h-auto">
                   {" "}
                   Sold Out{" "}

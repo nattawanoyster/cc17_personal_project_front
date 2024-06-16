@@ -8,22 +8,22 @@ export default function NavBarAespa() {
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-16">
           <div className="flex-1 flex items-center justify-center sm:items-stretch">
-            <div className="flex-shrink-0">
+            <div className="flex-shrink-0 mt-2">
               <Link
                 to="/chooseyourpath"
                 className="text-white text-xl font-bold"
               >
-                My Website
+                SUPERNOVA👽
               </Link>
             </div>
 
-            <div className="hidden sm:block sm:ml-6">
+            <div className="hidden sm:block sm:ml-6 mt-2">
               <div className="flex space-x-4">
                 <Link
                   to="/home-aespa"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
-                  Music Player
+                  Home
                 </Link>
                 <Link
                   to="/product-aespa"

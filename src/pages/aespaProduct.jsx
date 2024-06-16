@@ -4,12 +4,27 @@ import aespaPoster from "../assets/aespaPoster.png";
 import aespaZine from "../assets/aespaZine.png";
 import aespaMini from "../assets/aespaMini.png";
 import aespaAuthentic from "../assets/aespaAuthentic.png";
+import AespaModal from "../components/aespa-Modal";
+import { useState } from "react";
+// import myPowerDetails from "../assets/MyPowerDetails.jpeg";
+import posterDetails from "../assets/PosterDetails.jpeg";
+import zineDetails from "../assets/ZineDetails.jpeg";
 
 const aespaProduct = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div>
       <NavBarAespa />
-      <div className="bg-blue-950 min-h-screen flex items-center justify-center">
+      <div className="bg-gradient-to-r from-indigo-900 via-indigo-500 to-gray-900 min-h-screen flex items-center justify-center">
         <div className="max-w-5xl p-8 bg-white shadow-lg rounded-lg mt-6 grid gap-5">
           <div className="flex justify-center items-center">
             <h1 class="text-3xl font-bold mb-4 text-center">
@@ -37,9 +52,19 @@ const aespaProduct = () => {
               </p>
               <p class="text-gray-700 font-bold">₩ 48,000</p>
               <div className="mt-4 flex justify-between">
-                <button class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 mt-4 rounded focus:outline-none focus:shadow-outline">
+                <button
+                  onClick={openModal}
+                  class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 mt-4 rounded focus:outline-none focus:shadow-outline"
+                >
                   See More Details
                 </button>
+
+                <AespaModal
+                  isOpen={isModalOpen}
+                  onClose={closeModal}
+                  image={posterDetails}
+                />
+
                 <h3 className="bg-red-500 text-center font-semibold mt-6 p-1 w-28 h-auto">
                   {" "}
                   Sold Out{" "}
@@ -68,9 +93,18 @@ const aespaProduct = () => {
               </p>
               <p class="text-gray-700 font-bold">₩ 38,000</p>
               <div className="mt-4 flex justify-between">
-                <button class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 mt-4 rounded focus:outline-none focus:shadow-outline">
+                <button
+                  onClick={openModal}
+                  class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 mt-4 rounded focus:outline-none focus:shadow-outline"
+                >
                   See More Details
                 </button>
+
+                <AespaModal
+                  isOpen={isModalOpen}
+                  onClose={closeModal}
+                  image={posterDetails}
+                />
                 <h3 className="bg-red-500 text-center font-semibold mt-6 p-1 w-28 h-auto">
                   {" "}
                   Sold Out{" "}
@@ -99,9 +133,18 @@ const aespaProduct = () => {
               </p>
               <p class="text-gray-700 font-bold">₩ 49,000</p>
               <div className="mt-4 flex justify-between">
-                <button class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 mt-4 rounded focus:outline-none focus:shadow-outline">
+                <button
+                  onClick={openModal}
+                  class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 mt-4 rounded focus:outline-none focus:shadow-outline"
+                >
                   See More Details
                 </button>
+
+                <AespaModal
+                  isOpen={isModalOpen}
+                  onClose={closeModal}
+                  image={zineDetails}
+                />
                 <h3 className="bg-red-500 text-center font-semibold mt-6 p-1 w-28 h-auto">
                   {" "}
                   Sold Out{" "}
@@ -130,9 +173,18 @@ const aespaProduct = () => {
               </p>
               <p class="text-gray-700 font-bold">₩ 42,000</p>
               <div className="mt-4 flex justify-between">
-                <button class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 mt-4 rounded focus:outline-none focus:shadow-outline">
+                <button
+                  onClick={openModal}
+                  class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 mt-4 rounded focus:outline-none focus:shadow-outline"
+                >
                   See More Details
                 </button>
+
+                <AespaModal
+                  isOpen={isModalOpen}
+                  onClose={closeModal}
+                  image={posterDetails}
+                />
                 <h3 className="bg-red-500 text-center font-semibold mt-6 p-1 w-28 h-auto">
                   {" "}
                   Sold Out{" "}
@@ -161,9 +213,18 @@ const aespaProduct = () => {
               </p>
               <p class="text-gray-700 font-bold">₩ 50,000</p>
               <div className="mt-4 flex justify-between">
-                <button class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 mt-4 rounded focus:outline-none focus:shadow-outline">
+                <button
+                  onClick={openModal}
+                  class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 mt-4 rounded focus:outline-none focus:shadow-outline"
+                >
                   See More Details
                 </button>
+
+                <AespaModal
+                  isOpen={isModalOpen}
+                  onClose={closeModal}
+                  image={posterDetails}
+                />
                 <h3 className="bg-red-500 text-center font-semibold mt-6 p-1 w-28 h-auto">
                   {" "}
                   Sold Out{" "}

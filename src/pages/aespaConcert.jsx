@@ -2,12 +2,13 @@ import NavBarAespa from "../features/authentication/components/Navbar-aespa";
 import aespaConcert from "../assets/hyperline.png";
 import aespaSeat from "../assets/hyperline-seat.png";
 import HyperlineButton from "../features/authentication/components/aespaAllticket";
+import lucidSound from "../assets/aespa - Lucid Dream.mp3";
 
 const aespaHyperline = () => {
   return (
     <div>
       <NavBarAespa />
-      <div className="bg-blue-950 min-h-screen flex items-center justify-center">
+      <div className="bg-gradient-to-r from-indigo-900 via-indigo-500 to-gray-900 min-h-screen flex items-center justify-center">
         <div className="max-w-5xl p-8 bg-white shadow-lg rounded-lg mt-6">
           <div className="flex justify-center items-center">
             <h1 className="text-3xl font-bold mb-4">aespa Upcoming Concert</h1>
@@ -21,6 +22,17 @@ const aespaHyperline = () => {
               href="https://www.instagram.com/redvelvet.smtown/"
               target="_blank"
             />
+          </div>
+
+          <div className=" flex flex-col justify-center items-center mt-4 mb-4">
+            <h1 className="text-base font-medium text-center">
+              {" "}
+              Now Playing <br />
+              aespa - Lucid Dream
+            </h1>
+            <audio autoPlay loop controls>
+              <source src={lucidSound} type="audio/mpeg" />
+            </audio>
           </div>
 
           <div className=" ml-8 mt-4 gap-6">
@@ -94,9 +106,6 @@ const aespaHyperline = () => {
             </p>
           </div>
         </div>
-        {/* <audio autoPlay loop>
-          <source src={HelloSunsetSound} type="audio/mpeg" />
-        </audio> */}
       </div>
     </div>
   );
