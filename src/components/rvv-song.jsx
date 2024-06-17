@@ -1,18 +1,22 @@
-import NavBar from "../features/authentication/components/Navbar";
 import authApi from "../api/auth-api";
 import { useState, useEffect } from "react";
-import rvvCosmicPic from "../assets/rvv5.png";
 
 function rvvSong() {
   const [songs, setSongs] = useState([]);
   const [error, setError] = useState(null);
+
+  const [favorite, setFavorite] = useState(false);
+
+  const handleFavorite = () => {
+    setFavorite(!favorite);
+  };
 
   useEffect(() => {
     // Fetch songs from backend API
     authApi
       .getSong()
       .then((response) => {
-        setSongs(response.data.data); // Assuming your API response structure is { data: [] }
+        setSongs(response.data.data);
       })
       .catch((error) => {
         console.error("Error fetching songs:", error);
@@ -23,11 +27,10 @@ function rvvSong() {
       .getAuthUser()
       .then((response) => {
         console.log("Fetched user info:", response.data);
-        setUserId(response.data.userId); // Assuming userId is returned in response
+        setUserId(response.data.userId);
       })
       .catch((error) => {
         console.error("Error fetching user info:", error);
-        // Handle error fetching user info
       });
   }, []);
 
@@ -57,7 +60,7 @@ function rvvSong() {
                   {song.artist} - {song.album}
                 </p>
               </div>
-              {/* Spotify Embed */}
+
               <div className="p-4 mt-4 bg-gradient-to-bl from-slate-200 via-gray-400 to-gray-600 rounded-lg shadow-md">
                 <iframe
                   className="w-full h-48 md:h-32 lg:h-48 mt-6"
@@ -67,11 +70,21 @@ function rvvSong() {
               </div>
               {/* Favorite Button */}
               <div className="p-4 mt-4 bg-white rounded-lg shadow-md text-center">
-                <button
+                {/* <button
                   className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md"
                   onClick={() => addToFavorites(song.songId)}
                 >
                   ❤️ Add to Favorites
+                </button> */}
+                <button
+                  onClick={handleFavorite}
+                  className={`py-2 px-4 rounded-md ${
+                    favorite
+                      ? "bg-sky-300 text-white"
+                      : "bg-gray-200 text-black"
+                  }`}
+                >
+                  {favorite ? "❤️ Favorited" : "♡ Add to Favorites"}
                 </button>
               </div>
             </div>

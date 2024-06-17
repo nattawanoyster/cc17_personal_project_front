@@ -16,7 +16,7 @@ const aespaSong = () => {
     authApi
       .getSong()
       .then((response) => {
-        setSongs(response.data.data); // Assuming your API response structure is { data: [] }
+        setSongs(response.data.data);
       })
       .catch((error) => {
         console.error("Error fetching songs:", error);
@@ -27,11 +27,10 @@ const aespaSong = () => {
       .getAuthUser()
       .then((response) => {
         console.log("Fetched user info:", response.data);
-        setUserId(response.data.userId); // Assuming userId is returned in response
+        setUserId(response.data.userId);
       })
       .catch((error) => {
         console.error("Error fetching user info:", error);
-        // Handle error fetching user info
       });
   }, []);
 

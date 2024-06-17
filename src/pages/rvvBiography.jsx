@@ -6,7 +6,7 @@ const RedVelvetBio = () => {
   return (
     <div>
       <NavBar />
-      <div className="bg-red-950 min-h-screen flex items-center justify-center">
+      <div className="bg-gradient-to-br from-red-800 via-neutral-600 to-stone-800 min-h-screen flex items-center justify-center">
         <div className="max-w-5xl p-8 bg-white shadow-lg rounded-lg mt-6">
           <div className="flex justify-center items-center">
             <h1 className="text-3xl font-bold mb-4">Red Velvet</h1>

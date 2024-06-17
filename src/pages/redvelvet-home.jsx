@@ -3,15 +3,25 @@ import authApi from "../api/auth-api";
 import { useState, useEffect } from "react";
 import rvvCosmicPic from "../assets/rvv5.png";
 import RvvSong from "../components/rvv-song";
+import RvvImageGrid from "../features/authentication/components/rvvPicClub";
 
 function rvvHomePage() {
+  const handleClick = () => {
+    window.open("https://www.instagram.com/redvelvet.smtown/", "_blank");
+  };
+
   return (
     <div>
       <NavBar />
-      <img src={rvvCosmicPic} alt="Cover Image" className="w-full " />
+      <img
+        src={rvvCosmicPic}
+        onClick={handleClick}
+        alt="Cover Image"
+        className="w-full cursor-pointer "
+      />
 
       <div className="bg-gradient-to-br from-red-800 via-neutral-600 to-stone-800 min-h-screen flex items-center justify-center">
-        <div className="max-w-5xl p-8 bg-white shadow-lg rounded-lg mt-6">
+        <div className="max-w-5xl p-8 bg-slate-200 shadow-lg rounded-lg mt-6">
           <div className=" mt-8 mb-14">
             <h1 className="italic text-center">
               "Might be fragile, might be naive, <br />
@@ -108,6 +118,44 @@ function rvvHomePage() {
               complicated romantic relationship. A gothic-themed music video
               accompanied the single's digital release on December 23, 2019.
             </h2>
+            <div className="flex flex-col justify-center items-center mt-10">
+              <h1 className="text-xl font-medium mb-4">
+                {" "}
+                'Chill Kill' Hint Fiction Soundtrack{" "}
+              </h1>
+              <iframe
+                width="800"
+                height="450"
+                src={`https://www.youtube.com/embed/KTqA-IcxZPQ?si=GsAJ_0VrMn10Hgj3`}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+                className="rounded-lg shadow-lg"
+              ></iframe>
+              <h2 className="text-base text-center mb-10 mt-10 italic">
+                A puddle of water forms under my feet. I hear a voice. <br />
+                "You can open your eyes now. Only you have my permission to be
+                here." <br />
+                The moment I watch the rippling waves dancing toward me without
+                fear, the line between real and surreal begins to blur.
+                <br />
+                The reflection of the clock in the water points to 3:25 am.{" "}
+                <br />
+                <br />
+              </h2>
+            </div>
+          </div>
+          <RvvImageGrid />
+          <div className="mb-20 mt-10">
+            <h2 className="text-base text-center italic">
+              "Don't be afraid. We're never losing. Even if you're lost, we'll
+              find you." <br />
+              As the clouds clear away from the night sky that always seemed
+              frozen, <br /> the sun begins to paint a long tail of light.
+            </h2>
+            <br />
           </div>
           <RvvSong />
         </div>

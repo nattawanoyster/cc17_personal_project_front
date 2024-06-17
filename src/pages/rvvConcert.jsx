@@ -2,13 +2,13 @@ import NavBar from "../features/authentication/components/Navbar";
 import RvvRtoV from "../assets/rtov.jpg";
 import RvvRtoVseat from "../assets/rtovSeat.jpg";
 import RtoVButton from "../features/authentication/components/rvvAllticket";
-import HelloSunsetSound from "../assets/Red Velvet - Hello, Sunset (Nostalgic Acoustic Version).mp3";
+import WingsSound from "../assets/Red Velvet-Wings.mp3";
 
 const rvvConcert = () => {
   return (
     <div>
       <NavBar />
-      <div className="bg-red-950 min-h-screen flex items-center justify-center">
+      <div className="bg-gradient-to-br from-red-800 via-neutral-600 to-stone-800 min-h-screen flex items-center justify-center">
         <div className="max-w-5xl p-8 bg-white shadow-lg rounded-lg mt-6">
           <div className="flex justify-center items-center">
             <h1 className="text-3xl font-bold mb-4">
@@ -24,6 +24,17 @@ const rvvConcert = () => {
               href="https://www.instagram.com/redvelvet.smtown/"
               target="_blank"
             />
+          </div>
+
+          <div className=" flex flex-col justify-center items-center mt-4 mb-4">
+            <h1 className="text-base font-medium text-center">
+              {" "}
+              Now Playing <br />
+              Red Velvet - Wings
+            </h1>
+            <audio autoPlay loop controls className="mt-2">
+              <source src={WingsSound} type="audio/mpeg" />
+            </audio>
           </div>
 
           <div className=" ml-8 mt-4 gap-6">
@@ -98,9 +109,6 @@ const rvvConcert = () => {
             </p>
           </div>
         </div>
-        <audio autoPlay loop>
-          <source src={HelloSunsetSound} type="audio/mpeg" />
-        </audio>
       </div>
     </div>
   );
