@@ -45,6 +45,18 @@ export default function NavBarAespa() {
                 >
                   Concert
                 </Link>
+                <Link
+                  to="/FanQuiz"
+                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                >
+                  Quiz
+                </Link>
+                <a
+                  href="#song-list"
+                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                >
+                  Songs
+                </a>
               </div>
             </div>
             <div className="hidden sm:block sm:ml-6">

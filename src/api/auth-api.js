@@ -8,7 +8,14 @@ authApi.getAuthUser = () => axios.get("/auth/me");
 
 authApi.getSong = () => axios.get("/auth/home-redvelvet");
 
-// authApi.addToFavorites = (userId, songId) =>
-//   axios.post("/auth/add-to-favorites", { songId });
+authApi.getFavoriteSongs = (userId) => axios.get(`/auth/favorites/${userId}`);
+
+authApi.addToFavorites = (songId) =>
+  axios.post("/auth/add-to-favorites", { songId });
+
+authApi.removeFromFavorites = (favoriteSongId) =>
+  axios.delete(`/auth/delete-from-favorites/${favoriteSongId}`);
+
+authApi.updateProfile = (body) => axios.put("/auth/update-profile", body);
 
 export default authApi;

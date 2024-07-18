@@ -19,7 +19,7 @@ const chooseYourPath = () => {
           src={rvvLogo}
           alt="Image 1"
           className="cursor-pointer h-1/2 w-full object-cover"
-          onClick={() => handleImageClick("/chillkill")}
+          onClick={() => handleImageClick("/cosmic")}
         />
         <img
           src={aespaLogo}

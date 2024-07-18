@@ -41,7 +41,7 @@ export default function LoginForm() {
 
       await login(input);
       navigate("/chooseyourpath");
-      toast.success("Login Successfully. May you a delighted day");
+      toast.success("Login Successfully. May you a delightful day");
     } catch (error) {
       console.log(error);
       if (error instanceof AxiosError) {
@@ -89,7 +89,7 @@ export default function LoginForm() {
         </div>
 
         <div className="flex items-center justify-center">
-          <button className="bg-lime-900 hover:bg-lime-800 bg-opacity-80 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-72">
+          <button className="bg-lime-900 hover:bg-[#244F1A] bg-opacity-80 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-72">
             Log In
           </button>
         </div>

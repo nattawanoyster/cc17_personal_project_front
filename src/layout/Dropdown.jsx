@@ -24,7 +24,7 @@ export default function Dropdown({ size = 2 }) {
       </div>
 
       {open && (
-        <div className="absolute left-2/4 -translate-x-2 translate-y-3">
+        <div className="absolute left-2/4 translate-x-5 translate-y-3">
           <div className="p-4 w-72 bg-gray-300 rounded-lg shadow-[0_0_6px_rgb(0,0,0,0.2)]">
             <Link
               to={`/profile/${authUser?.userId}`}

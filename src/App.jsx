@@ -13,10 +13,10 @@ function App() {
   return (
     <Suspense
       fallback={
-        <h1>
+        <div>
           {" "}
           <Spinner />{" "}
-        </h1>
+        </div>
       }
     >
       <AuthContextProvider>

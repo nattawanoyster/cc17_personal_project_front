@@ -3,11 +3,16 @@ import NavBarAespa from "../features/authentication/components/Navbar-aespa";
 import aespa4pic from "../assets/aespa4.jpeg";
 import AespaIntro from "../components/aespa-intro";
 import AespaImageGrid from "../features/authentication/components/aeaspaPicClub";
+import SongList from "../components/rvv-song";
+import { Link } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
 
 const aespaHomePage = () => {
   const handleClick = () => {
     window.open("https://www.instagram.com/aespa_official/", "_blank");
   };
+
+  const { authUser } = useAuth();
 
   return (
     <div>
@@ -37,7 +42,17 @@ const aespaHomePage = () => {
             </h2>
             <br />
           </div>
-          <AespaSong />
+          <div className="flex justify-center mt-4">
+            <Link
+              to={`/profile/${authUser?.userId}`}
+              className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition-transform transform hover:scale-105"
+            >
+              See you Favorite Songs
+            </Link>
+          </div>
+          <div id="song-list">
+            <SongList />
+          </div>
         </div>
       </div>
     </div>

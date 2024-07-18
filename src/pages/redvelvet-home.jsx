@@ -4,11 +4,15 @@ import { useState, useEffect } from "react";
 import rvvCosmicPic from "../assets/rvv5.png";
 import RvvSong from "../components/rvv-song";
 import RvvImageGrid from "../features/authentication/components/rvvPicClub";
+import { Link } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
 
 function rvvHomePage() {
   const handleClick = () => {
     window.open("https://www.instagram.com/redvelvet.smtown/", "_blank");
   };
+
+  const { authUser } = useAuth();
 
   return (
     <div>
@@ -21,7 +25,7 @@ function rvvHomePage() {
       />
 
       <div className="bg-gradient-to-br from-red-800 via-neutral-600 to-stone-800 min-h-screen flex items-center justify-center">
-        <div className="max-w-5xl p-8 bg-slate-200 shadow-lg rounded-lg mt-6">
+        <div className="max-w-5xl p-8 bg-white shadow-lg rounded-lg mt-6">
           <div className=" mt-8 mb-14">
             <h1 className="italic text-center">
               "Might be fragile, might be naive, <br />
@@ -157,7 +161,17 @@ function rvvHomePage() {
             </h2>
             <br />
           </div>
-          <RvvSong />
+          <div className="flex justify-center mt-4">
+            <Link
+              to={`/profile/${authUser?.userId}`}
+              className="bg-gradient-to-r from-violet-200 to-pink-200 text-gray-700 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition-transform transform hover:scale-105"
+            >
+              See you Favorite Songs
+            </Link>
+          </div>
+          <div id="rvv-list">
+            <RvvSong />
+          </div>
         </div>
       </div>
     </div>
@@ -165,46 +179,3 @@ function rvvHomePage() {
 }
 
 export default rvvHomePage;
-
-// export default function RedvelvetHome() {
-// const [artist, setArtist] = useState([]);
-
-// console.log(artist, "-----------------");
-// useEffect(() => {
-//   const getSong = async () => {
-//     const res = await authApi.getSong();
-//     setArtist(res.data);
-//   };
-//   getSong();
-// }, []);
-// const res = getSong()
-
-//   return (
-//     <div>
-//       <NavBar />
-//       <div className="h-screen">
-//         <img
-//           src={rvvCosmicPic}
-//           alt="rvvCosmicPic"
-//           className="cursor-pointer h-1/2 w-full object-cover"
-//         />
-//       </div>
-//       <div className="flex justify-center items-center mt-6">
-//         <div>
-//           <iframe
-//             style={{ borderRadius: "12px" }}
-//             src="https://open.spotify.com/embed/album/4YBKpZhJQXxO7RNjA4V4lY?utm_source=generator"
-//             width="700"
-//             height="700"
-//             frameBorder="0"
-//             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-//             allowFullScreen
-//             loading="lazy"
-//           ></iframe>
-//         </div>
-//         {/* <h1>My Spotify Embed</h1>
-//         <Spotify.Spotify link="https://open.spotify.com/track/1zC3wpW5qU7n6KVrBlbAah?si=1ce3544522374f69" /> */}
-//       </div>
-//     </div>
-//   );
-// }

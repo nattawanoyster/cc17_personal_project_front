@@ -19,7 +19,7 @@ export default function Modal({ width = 30, title, children, open, onClose }) {
           <div className="fixed inset-0 z-40" onClick={onClose}>
             <div className="flex justify-center items-center min-h-screen">
               <div
-                className="bg-lime-950 rounded-lg shadow-lg"
+                className="bg-gradient-to-r from-neutral-400 to-stone-500 rounded-lg shadow-lg"
                 style={{ width: `${width}rem` }}
                 onClick={(e) => e.stopPropagation()}
               >
